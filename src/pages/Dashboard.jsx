@@ -1,28 +1,19 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import React from 'react'
+import Sidebar from '../components/Sidebar'
+import Header from '../components/Header'
 
 const Dashboard = () => {
-    const navigate = useNavigate();
-
-    function reDirect(){
-        console.log('redirect this page')
-        navigate('/')
-    }
-    
-
   return (
     <>
-      <h1
-        className="logout"
-        onClick={() => {
-          console.log("Logout this page");
-          reDirect();
-        }}
-      >
-        Logout
-      </h1>
+      <div className="dashboard-align flex justify-start items-start gap-4 max-w-full">
+        <Sidebar/>
+        <main className='w-full'>
+          <Header/>
+          <h1>Main Item place</h1>
+        </main>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
